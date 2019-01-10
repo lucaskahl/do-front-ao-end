@@ -100,6 +100,15 @@
     width: 50%;
     min-width: 655px;
     margin: 0 auto 60px;
+    position: relative;
+  }
+
+  .description-product > .item.-heart {
+    position: absolute;
+    transform: translateX(-100%);
+    top: 1%;
+    left: 6%;
+    cursor: pointer;
   }
 
   .description-product > .title {
