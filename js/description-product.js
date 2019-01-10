@@ -1,25 +1,21 @@
 const $heart = document.querySelector(".-heart");
 const $stars = document.querySelectorAll(".star");
+const lastPosition = $stars.length - 1;
 
 $heart.addEventListener("click", handleClick);
 
-$stars.forEach(($star, key, parent) => {
-  switch (key) {
-    case 0:
-      $star.addEventListener("click", zeroStar);
-      break;
-    case 1:
-      $star.addEventListener("click", firstStar);
-      break;
-    case 2:
-      $star.addEventListener("click", secondStar);
-      break;
-    case 3:
-      $star.addEventListener("click", thirdStar);
-      break;
-    case 4:
-      $star.addEventListener("click", fourthStar);
-      break;
+$stars.forEach(function($star, key) {
+  if (key == 0) {
+    $star.addEventListener("click", firstStar);
+  }
+  if (key == lastPosition) {
+    $star.addEventListener("click", lastStar);
+  }
+
+  if (key > 0 && key < lastPosition) {
+    $star.addEventListener("click", () => {
+      middleStar(key);
+    });
   }
 });
 
@@ -27,32 +23,25 @@ function handleClick() {
   this.classList.toggle("-active");
 }
 
-function zeroStar() {
-  this.classList.toggle("-active");
-}
-
 function firstStar() {
-  $stars[0].classList.toggle("-active");
-  $stars[1].classList.toggle("-active");
+  $stars.forEach(function($star) {
+    $star.classList.remove("-active");
+  });
+  this.classList.add("-active");
 }
 
-function secondStar() {
-  $stars[0].classList.toggle("-active");
-  $stars[1].classList.toggle("-active");
-  $stars[2].classList.toggle("-active");
+function middleStar(index) {
+  $stars.forEach(function($star, key) {
+    $star.classList.remove("-active");
+
+    if (key <= index) {
+      $star.classList.add("-active");
+    }
+  });
 }
 
-function thirdStar() {
-  $stars[0].classList.toggle("-active");
-  $stars[1].classList.toggle("-active");
-  $stars[2].classList.toggle("-active");
-  $stars[3].classList.toggle("-active");
-}
-
-function fourthStar() {
-  $stars[0].classList.toggle("-active");
-  $stars[1].classList.toggle("-active");
-  $stars[2].classList.toggle("-active");
-  $stars[3].classList.toggle("-active");
-  $stars[4].classList.toggle("-active");
+function lastStar() {
+  $stars.forEach(function($star) {
+    $star.classList.add("-active");
+  });
 }
