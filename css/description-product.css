@@ -104,11 +104,8 @@
   }
 
   .description-product > .item.-heart {
-    position: absolute;
-    transform: translateX(-100%);
-    top: 1%;
-    left: 6%;
-    cursor: pointer;
+    left: auto;
+    transform: none;
   }
 
   .description-product > .title {
@@ -129,5 +126,11 @@
   .description-product {
     width: 90%;
     min-width: auto;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .description-product > .item.-heart {
+    position: static;
   }
 }
