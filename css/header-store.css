@@ -71,7 +71,8 @@
 }
 
 .header-store img {
-  width: 50px;
+  width: 35px;
+  display: none;
 }
 
 @media (max-width: 1310px) {
@@ -124,10 +125,21 @@
     position: absolute;
     top: 0;
     left: 0;
+    display: block;
   }
 
   .header-store .search-icon.-active {
     display: none;
+  }
+  .header-store .x-icon {
+    position: absolute;
+    top: 0;
+    left: 70%;
+    display: none;
+  }
+
+  .header-store .x-icon.-active {
+    display: block;
   }
 }
 
