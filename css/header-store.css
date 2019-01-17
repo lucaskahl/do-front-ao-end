@@ -25,7 +25,6 @@
   color: inherit;
   margin-right: 60px;
   padding-bottom: 8px;
-  position: relative;
 }
 
 .header-store .action.-last {
@@ -47,6 +46,10 @@
 
 .header-store .action:hover:after {
   transform: scale(1);
+}
+
+.header-store #menu {
+  display: none;
 }
 
 @media (max-width: 1310px) {
@@ -105,5 +108,58 @@
 @media (max-width: 335px) {
   .header-store .action {
     display: none;
+  }
+  .header-store .menu-mobile {
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+
+    top: 20px;
+    left: 89%;
+  }
+
+  .header-store .menu-mobile::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: -8px;
+    width: 30px;
+    height: 2px;
+    background-color: inherit;
+  }
+  .header-store .menu-mobile::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 8px;
+    width: 30px;
+    height: 2px;
+    background-color: inherit;
+  }
+
+  .header-store #menu {
+    position: absolute;
+    width: 200px;
+    margin: 10px 0 0 0;
+    padding: 30px;
+    right: -100px;
+    background: red;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
+
+  .header-store #menu.-active {
+    display: inline-block;
+    transform: translate(-90%, 0);
+    position: absolute;
+    top: 10px;
+    left: 0;
+    margin: 0;
+    right: 0;
+    z-index: 999;
   }
 }
