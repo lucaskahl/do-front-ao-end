@@ -3,9 +3,12 @@ html {
   height: 100%;
 }
 
+html {
+  background-image: linear-gradient(to top, #ff2363, #252a34);
+}
+
 ​ body {
   background-color: #252a34;
-  background-image: linear-gradient(to top, #ff2363, #252a34);
 }
 
 @media (max-width: 335px) {

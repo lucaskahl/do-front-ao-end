@@ -23,7 +23,7 @@
   display: none;
 }
 
-@media (max-width: 955px) {
+@media (max-width: 1235px) {
   .input-search {
     position: absolute;
     top: 0;
