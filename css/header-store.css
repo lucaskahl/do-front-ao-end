@@ -19,16 +19,24 @@
   float: right;
 }
 
-.header-store .action {
+.header-store .item {
   display: inline-block;
-  text-decoration: none;
-  color: inherit;
   margin-right: 60px;
   padding-bottom: 8px;
 }
 
-.header-store .action.-last {
+.header-store .item.-menu {
+  display: none;
+}
+
+.header-store .item.-last {
   margin-right: 0;
+}
+
+.header-store .action {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
 }
 
 .header-store .action:after {
@@ -46,10 +54,6 @@
 
 .header-store .action:hover:after {
   transform: scale(1);
-}
-
-.header-store #menu {
-  display: none;
 }
 
 @media (max-width: 1310px) {
@@ -83,13 +87,13 @@
 }
 
 @media (max-width: 530px) {
-  .header-store .action {
+  .header-store .item {
     margin-right: 30px;
   }
 }
 
 @media (max-width: 465px) {
-  .header-store .action {
+  .header-store .item {
     margin-right: 15px;
   }
 }
@@ -100,66 +104,47 @@
     padding-right: 16px;
   }
 
-  .header-store .action {
+  .header-store .item {
     margin-right: 8px;
   }
 }
 
 @media (max-width: 335px) {
-  .header-store .action {
-    display: none;
-  }
-  .header-store .menu-mobile {
-    position: absolute;
+  .header-store .item.-menu {
     display: block;
-    width: 30px;
-    height: 2px;
-    background-color: #fff;
-
-    top: 20px;
-    left: 89%;
-  }
-
-  .header-store .menu-mobile::after {
-    content: "";
-    position: absolute;
-    display: block;
-    top: -8px;
-    width: 30px;
-    height: 2px;
-    background-color: inherit;
-  }
-  .header-store .menu-mobile::before {
-    content: "";
-    position: absolute;
-    display: block;
-    top: 8px;
-    width: 30px;
-    height: 2px;
-    background-color: inherit;
-  }
-
-  .header-store #menu {
-    position: absolute;
-    width: 200px;
-    margin: 10px 0 0 0;
-    padding: 30px;
-    right: -100px;
-    background: red;
-    list-style-type: none;
-    -webkit-font-smoothing: antialiased;
-    transform-origin: 0% 0%;
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-  }
-
-  .header-store #menu.-active {
-    display: inline-block;
-    transform: translate(-90%, 0);
-    position: absolute;
-    top: 10px;
-    left: 0;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
     margin: 0;
+    background-image: url(../img/menu.svg);
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-position: center;
+    background-size: 30px 30px;
+    text-indent: -9999px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+  }
+
+  .header-store .list {
+    background-color: #fff;
+    color: #000;
+    width: 100%;
+    padding: 40px 0 20px;
+    position: absolute;
+    top: 0;
     right: 0;
-    z-index: 999;
+    #menu_escapando-enquanto-esta-ativetransform: translateX(100%);
+    transition: transform 0.3s linear;
+  }
+
+  .header-store .list.-active {
+    transform: translateX(0);
+  }
+
+  .header-store .item {
+    display: block;
   }
 }
