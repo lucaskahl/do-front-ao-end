@@ -125,7 +125,11 @@
     position: absolute;
     top: 0;
     left: 0;
+    cursor: pointer;
+
     transform: translateX(-100%);
+
+    transition: transform 0.2s linear;
   }
 
   .header-store .list {
@@ -136,12 +140,18 @@
     position: absolute;
     top: 0;
     right: 0;
-    #menu_escapando-enquanto-esta-ativetransform: translateX(100%);
+    transform: translateX(100%);
     transition: transform 0.3s linear;
   }
 
   .header-store .list.-active {
     transform: translateX(0);
+  }
+
+  .header-store .list.-active .item.-menu {
+    background-image: url(../img/x-icon.png);
+    transform: translateX(0);
+    transition: none;
   }
 
   .header-store .item {

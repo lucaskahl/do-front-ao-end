@@ -1,6 +1,7 @@
-// const $menuMobile = document.querySelector(".menu-mobile");
-// const $menu = $menuMobile.querySelector("#menu");
+const $headerStore = document.querySelector(".header-store");
+const $menu = $headerStore.querySelector(".-menu");
+const $list = $headerStore.querySelector(".list");
 
-// $menuMobile.addEventListener("click", () => {
-//   $menu.classList.toggle("-active");
-// });
+$menu.addEventListener("click", () => {
+  $list.classList.toggle("-active");
+});
