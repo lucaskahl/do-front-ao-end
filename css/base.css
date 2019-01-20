@@ -4,11 +4,12 @@ html {
 }
 
 html {
-  background-image: linear-gradient(to top, #ff2363, #252a34);
+  background-color: #ff2e63;
 }
 
-​ body {
-  background-color: #252a34;
+body {
+  background-color: #ff2e63;
+  background-image: linear-gradient(to bottom, #252a34, #ff2e63);
 }
 
 @media (max-width: 335px) {
